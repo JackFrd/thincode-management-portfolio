@@ -1,0 +1,96 @@
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-12 col-lg-8">
+      <div class="pl-5">
+        <h2>Ubicación en tiempo real</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d119447.0103066573!2d-101.35446350000001!3d20.681005199999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1584746853520!5m2!1ses-419!2smx" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-4">
+      <h2>Impulsando el trabajo en Equipo</h2>
+      <p>
+          Bienvenido a la herramienta de gestión de proyectos, podrás ver los proyectos
+          a los cuales estas asignado, tareas y personal con el que estarás trabajando en
+          equipo. Si no cuentas con tus credenciales por favor acudir al área de Infraestructura
+          para obtenerlas.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="splitcontent">
+<div class="splitcontentleft">
+  <div class="wiki">
+    <%= textilizable Setting.welcome_text %>
+  </div>
+  <%= call_hook(:view_welcome_index_left) %>
+</div>
+
+
+<div class="splitcontentright">
+  <% if @news.any? %>
+  <div class="news box">
+  <h3><%=l(:label_news_latest)%></h3>
+    <%= render :partial => 'news/news', :collection => @news %>
+    <%= link_to l(:label_news_view_all), :controller => 'news' %>
+  </div>
+  <% end %>
+  <%= call_hook(:view_welcome_index_right) %>
+</div>
+</div>
+
+<% content_for :header_tags do %>
+<%= auto_discovery_link_tag(:atom, {:controller => 'news', :action => 'index', :key => User.current.rss_key, :format => 'atom'},
+                                   :title => "#{Setting.app_title}: #{l(:label_news_latest)}") %>
+<%= auto_discovery_link_tag(:atom, {:controller => 'activities', :action => 'index', :key => User.current.rss_key, :format => 'atom'},
+                                   :title => "#{Setting.app_title}: #{l(:label_activity)}") %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="splitcontent">
+<div class="splitcontentleft">
+  <div class="wiki">
+    <%= textilizable Setting.welcome_text %>
+  </div>
+  <%= call_hook(:view_welcome_index_left) %>
+</div>
+
+<div class="splitcontentright">
+  <% if @news.any? %>
+  <div class="news box">
+  <h3><%=l(:label_news_latest)%></h3>
+    <%= render :partial => 'news/news', :collection => @news %>
+    <%= link_to l(:label_news_view_all), :controller => 'news' %>
+  </div>
+  <% end %>
+  <%= call_hook(:view_welcome_index_right) %>
+</div>
+</div>
+
+<% content_for :header_tags do %>
+<%= auto_discovery_link_tag(:atom, {:controller => 'news', :action => 'index', :key => User.current.rss_key, :format => 'atom'},
+                                   :title => "#{Setting.app_title}: #{l(:label_news_latest)}") %>
+<%= auto_discovery_link_tag(:atom, {:controller => 'activities', :action => 'index', :key => User.current.rss_key, :format => 'atom'},
+                                   :title => "#{Setting.app_title}: #{l(:label_activity)}") %>
+<% end %>
