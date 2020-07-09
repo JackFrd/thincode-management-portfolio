@@ -91,7 +91,7 @@ EasyGem.schedule.require(function () {
       show_toggle_button: true,
       select_first_value: true,
       autocomplete_options: {},
-      mulstiselectOnChange: null // onchange of multiselect input function
+      multiselectOnChange: null // onchange of multiselect input function
     },
 
     _create: function () {
@@ -139,10 +139,10 @@ EasyGem.schedule.require(function () {
         this.element.css('margin-right', 0);
       }
     },
-    setMulstiselectOnChange: function (fn) {
-      this.options.mulstiselectOnChange = fn;
+    setMultiselectOnChange: function (fn) {
+      this.options.multiselectOnChange = fn;
     },
-    mulstiselectOnChange: function(select, fn) {
+    multiselectOnChange: function(select, fn) {
       if (fn) select.on("change", fn);
     },
 
@@ -160,7 +160,7 @@ EasyGem.schedule.require(function () {
             option.prop('selected', that.getValue().indexOf(v.id) > -1);
             select.append(option);
           });
-          that.mulstiselectOnChange(select, that.options.mulstiselectOnChange);
+          that.multiselectOnChange(select, that.options.multiselectOnChange);
           var $container = $elem.closest('.easy-multiselect-tag-container');
           $container.find(':input').prop('disabled', true);
           $container.children().hide();

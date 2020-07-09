@@ -3716,70 +3716,16 @@ html>body #content {
 	text-align: center
 }
 
-#login-form {
-	margin: 5em auto 2em auto;
-	padding: 20px;
-	width: 100%;
-	max-width: 360px;
-	border: 1px solid var(--background);
-	background-color: var(--white2);
-	border-radius: 4px;
-	box-sizing: border-box
-}
+#login-form {margin:5em auto 2em auto; padding:20px; width:320px; opacity:.95; -moz-opacity:.8; filter:alpha(opacity=80); -khtml-opacity: 0.8; background-color: rgba(255,255,255,0.63); border-radius:20px; box-sizing: border-box;}
+#login-form label {display:block; margin-bottom:5px; font-weight:bold;}
+#login-form label[for=autologin] {font-weight:normal;}
+#login-form input {width: 20px; height: 30px;}
+#login-form input[type=text], #login-form input[type=password], #login-form input[type=submit] {border-radius:10px; display: block; width: 100%;}
+#login-form input[type=text], #login-form input[type=password] { border-radius:15px; margin-bottom: 15px;}
+#login-form a.lost_password {float:right; font-weight:normal;  border-radius:15px;}
+#login-form input[type=submit] { background-color: #00659D; color: #fff; height:35px; width: 80px; margin-left: auto; margin-right:auto; border-radius: 15px}
+#login-form input#openid_url { background:#fff url(../images/openid-bg.gif) no-repeat 4px 50%; padding-left:24px !important;}
 
-#login-form label {
-	display: block;
-	margin-bottom: 5px;
-	font-weight: bold
-}
-
-#login-form label[for=autologin] {
-	font-weight: normal
-}
-
-#login-form input {
-	height: 29px
-}
-
-#login-form input[type=text],
-#login-form input[type=password],
-#login-form input[type=submit] {
-	display: block;
-	width: 100%
-}
-
-#login-form input[id=username] {
-	background-color: var(--white1);
-
-}
-
-#login-form input[id=password] {
-	background-color: var(--white1);
-
-}
-
-#login-form input[id=login-submit]{
-	background-color: var(--red);
-}
-
-#login-form input[type=text],
-#login-form input[type=password] {
-	margin-bottom: 15px
-}
-
-#login-form a.lost_password {
-	float: right;
-	font-weight: normal
-}
-
-#login-form input#openid_url {
-	background: var(--white1) url(../images/openid-bg.gif) no-repeat 4px 50%;
-	padding-left: 24px !important
-}
-
-#login-form #login-submit{
-	background-color: var(--blue1);
-}
 div.modal {
 	z-index: 50;
 	padding: 4px;
