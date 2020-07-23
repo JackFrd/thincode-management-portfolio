@@ -76,7 +76,8 @@ sup {
 }
 
 img {
-	border-style: none
+	margin:10px auto;
+display:block;
 }
 
 button,
@@ -2368,12 +2369,14 @@ h4 {
 
 h2,
 .wiki h1 {
-	font-size: 1.8em
+	font-size: 1.2em;
+
 }
 
 h3,
 .wiki h2 {
-	font-size: 1.5em
+	font-size: 1.0em
+	
 }
 
 h4,
@@ -2387,7 +2390,8 @@ code {
 }
 
 p {
-	line-height: 1.5em
+	line-height: 1.5em;
+	text-align: justify;
 }
 
 li {
@@ -2449,6 +2453,7 @@ div#wrapper3 {
 	text-transform: none;
 	line-height: 1;
 	margin-right: .2em;
+        text-align: justify;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	content: "";
@@ -5013,7 +5018,9 @@ fieldset {
 
 legend {
 	color: #7f8c8d;
-	padding: 0 .2em
+	padding: 0 .2em;
+	font-size: 1em;
+	
 }
 
 hr {
@@ -5436,7 +5443,7 @@ div#roadmap .wiki h1 {
 }
 
 div#roadmap .wiki h2 {
-	font-size: 1.1em
+	font-size: 0.5em
 }
 
 div#roadmap h2,
@@ -5846,7 +5853,7 @@ ul.properties li span {
 
 .autoscroll {
 	overflow-x: auto;
-	padding: 1px;
+	padding: 1px;o
 	margin-bottom: 1.2em;
 	position: relative
 }
@@ -6680,14 +6687,16 @@ table.cal {
 	margin: 0 0 6px 0;
 	border: 1px solid #bdc3c7;
 	border-radius: .2em;
-	font-size: .8em
+	font-size: .8em;
+
 }
 
 table.cal thead th {
 	width: 14%;
 	background-color: #ecf0f1;
 	padding: 4px;
-	font-weight: normal
+	font-weight: normal;
+
 }
 
 table.cal thead th.week-number {
@@ -7287,7 +7296,7 @@ div.wiki img {
 }
 
 .wiki p {
-	margin: 2em 1em;
+	margin: 0;
 	font-feature-settings: "palt";
 	text-align: justify
 }
