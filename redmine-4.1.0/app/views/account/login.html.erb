@@ -25,6 +25,7 @@
   <input type="submit" name="login" value="<%=l(:button_login)%>" tabindex="5" id="login-submit" />
   <% end %>
    <%= link_to l(:label_password_lost), lost_password_path, :class => "lost_password" if Setting.lost_password? %>
+  <br>
 </div>
 
 <%= call_hook :view_account_login_bottom %>

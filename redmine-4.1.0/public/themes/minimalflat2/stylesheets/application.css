@@ -2622,7 +2622,7 @@ div#wrapper3 {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	margin: 0;
-	padding: .5em 0 0 .3em;
+	padding: .5em 0 .3em;
 	font-size: 1.6em;
 	font-weight: normal
 }
@@ -2650,11 +2650,14 @@ div#wrapper3 {
 }
 
 #header h1 .breadcrumbs a {
-	color: var(--white1);
+	/*color: var(--white1);*/
+	color: black;
+	font-size:1.6em ;
+	color : var(--grey5);
 }
 
 #header h1 .breadcrumbs a:hover {
-	color: var(--grey5)
+	color: var(--background)
 }
 /**/
 
@@ -3728,7 +3731,7 @@ html>body #content {
 #login-form input[type=text], #login-form input[type=password], #login-form input[type=submit] {border-radius:10px; display: block; width: 100%;}
 #login-form input[type=text], #login-form input[type=password] { border-radius:15px; margin-bottom: 15px;}
 #login-form a.lost_password {float:right; font-weight:normal;  border-radius:15px;}
-#login-form input[type=submit] { background-color: #00659D; color: #fff; height:35px; width: 80px; margin-left: auto; margin-right:auto; border-radius: 15px}
+#login-form input[type=submit] { background-color: #00659D; color: #fff; height:35px; width: 100px; margin-left: auto; margin-right:auto; border-radius: 15px}
 #login-form input#openid_url { background:#fff url(../images/openid-bg.gif) no-repeat 4px 50%; padding-left:24px !important;}
 
 div.modal {
@@ -5065,7 +5068,8 @@ body.textarea-proportional textarea.wiki-edit {
 }
 
 li p {
-	margin-top: 0
+	margin-top: 0;
+	color: black
 }
 
 div.issue {
