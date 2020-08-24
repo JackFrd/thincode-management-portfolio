@@ -109,7 +109,13 @@ class Principal < ActiveRecord::Base
       where("1=0")
     else
       ids = projects.map(&:id)
-      where("#{Principal.table_name}.id NOT IN (SELECT DISTINCT user_id FROM #{Member.table_name} WHERE project_id IN (?))", ids)
+       #where("#{Principal.table_name}.id NOT IN (SELECT DISTINCT user_id FROM #{Member.table_name} WHERE project_id IN (?))", ids)
+       where("(#{Principal.table_name}.id not in (SELECT m.user_id from #{Member.table_name} m 
+       JOIN #{User.table_name} u on u.id = m.user_id
+       JOIN #{Project.table_name} p on p.id=m.project_id 
+       where p.status !=5 AND u.type != 'Group' and u.lastname not in ('General','Anonymous','GroupAnonymous','GroupNonMember')
+       )or #{Principal.table_name}.id IN (select id from #{User.table_name} u join groups_users gu on gu.user_id=u.id where gu.group_id not in(52,55,58,1) and u.id !=1))
+      and #{Principal.table_name}.id NOT IN (SELECT DISTINCT user_id FROM #{Member.table_name}  WHERE project_id IN (?))", ids)
     end
   }
   scope :sorted, lambda { order(*Principal.fields_for_order_statement)}
